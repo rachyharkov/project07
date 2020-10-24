@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*
+{
+	scroll-behavior: smooth;
+}
+
+body
+{
+  font-family: 'Merriweather Sans', sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.welcome-banner
+{
+	height: auto; 
+	background-color: #d52c27; 
+	padding: 20px 90px !important;
+}
+
+.wabutton
+{
+	background-color: #28CD46;
+	border: 1px solid #28CD46;
+	border-radius: 10px;
+	color: white;
+	padding: 13px 20px;
+	margin-right: 30px;
+	transition: 0.3s ease-in-out;	
+}
+
+.wabutton:hover
+{
+	background-color: #11C236;
+	border: 1px solid #11C236;
+	text-decoration: none;
+	transition: 0.2s ease-in-out;
+	color: white;
+}
+
+.unggulanbutton
+{
+	border-radius: 10px;
+	border: 1px solid white;
+	padding: 13px 20px;
+	color: white;
+	transition: 0.3s ease-in-out;
+}
+
+.unggulanbutton:hover
+{
+	color: black;
+	background-color: white;
+	text-decoration: none;
+	transition: 0.2s ease-in-out;
+}
+
+
+button .slick-next .slick.arrow, button .slick-next .slick.arrow
+{
+	visibility: hidden;
+}
+
+.slidew
+{
+	height: 320px !important; 
+	width: auto; 
+	background-color: white; 
+	text-align: center;
+	outline: none;
+	position: relative;
+	background-color: gray;
+}
+
+.slidew:hover img
+{
+	clear: both;
+	opacity: 0.2;
+	transform: scale(1.4);
+	transition: 0.3s ease-in-out;
+	margin: 0;
+}
+
+.slidew:hover div
+{
+	top: 20px;
+	transition: 0.5s ease-in-out;
+}
+
+.slidew img
+{
+	position: absolute;
+	transition: 0.5s ease-in-out;
+	height: 100%;
+	width: auto;
+}
+
+.slidew div
+{
+	padding-top: 40px;
+	padding-right: 4rem;
+	text-align: left;
+	position: absolute; 
+	bottom: 50px;
+	left: 30px;
+	top: 100%;
+	transition: 0.3s ease-in-out;
+}
+
+.slidew div a
+{
+	border: 1px solid white;
+	border-radius: 20px;
+	background-color: transparent;
+	color: white;
+	padding: 5px 30px;
+	text-decoration: none;
+	transition: 0.4s ease-in-out;
+	outline: none;
+}
+
+.slidew div a:hover
+{
+	transition: 0.3s ease-in-out;
+	border: 1px solid #D52C27;
+	background-color: #D52C27;
+	color: white;
+}
+
+.contain-side
+{
+ /* background: url('images/paketsemarak.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  margin-top: 30px;
+  background-color: gray;
+  height: 210px;
+  width: 80% !important;
+  border-radius: 15px;
+}
+
+.ctn
+{
+  display: inline-block;
+  outline: none;
+  margin: 10px auto 10px auto;
+  padding: 15px 6px 15px 6px;
+  font-size: 27px;
+}
+
+@media screen and (max-width: 870px)
+{
+	.welcome-banner
+	{
+		padding: 20px 15px !important;
+	}
+}
