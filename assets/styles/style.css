@@ -9,17 +9,86 @@ body
 {
   font-family: 'Merriweather Sans', sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+  }
+
 .welcome-banner
 {
-	height: auto; 
-	background-color: #d52c27; 
+	height: 100vh; 
+	overflow-x: hidden;
+	background-color: transparent; 
 	padding: 20px 90px !important;
 }
+
+.welcome-text {
+	margin-top: 0 !important;
+	max-width: 900px; 
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-70%);
+	transform: translateY(-70%);
+}
+
+.wrapper{
+	margin-top: 0;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	perspective: 2px;
+}
+
+.wrapper-welcome-banner
+{
+	position: relative;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	text-shadow: 0 0 5px #000;
+}
+
+.parallax::after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transform: translateZ(-1px) scale(1.5);
+	background-size: 100%;
+	z-index: -1;
+}
+.bg1::after {
+	background-image: url('/assets/images/jumbo/bg.webp');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+  }
 
 .wabutton
 {
@@ -41,12 +110,40 @@ body
 	color: white;
 }
 
+.service-wrapper
+{
+	width: 100%;
+	max-width: 900px;
+	align-self: center;
+}
+
+.service-wrapper > .row > .col-md-4 > div.service-icon-wrapper > svg
+{
+	color: #E43121;
+	margin: 25px;
+}
+
+div.service-description > h4, div.service-description > p
+{
+	text-align: center;
+	color: #333333;
+	margin: 10px;
+}
+
+.service-icon-wrapper
+{
+	text-align: center;
+}
+
+
+
 .unggulanbutton
 {
 	border-radius: 10px;
 	border: 1px solid white;
 	padding: 13px 20px;
-	color: white;
+	color: black;
+	background-color: white;
 	transition: 0.3s ease-in-out;
 }
 
@@ -64,70 +161,29 @@ button .slick-next .slick.arrow, button .slick-next .slick.arrow
 	visibility: hidden;
 }
 
-.slidew
+
+.collapse-btn
 {
-	height: 320px !important; 
-	width: auto; 
-	background-color: white; 
-	text-align: center;
-	outline: none;
-	position: relative;
-	background-color: gray;
+	width: 100%;
+    background-color: #ecebea !important;
+    border-radius: 15px !important;
 }
 
-.slidew:hover img
+.collapse-btn:hover
 {
-	clear: both;
-	opacity: 0.2;
-	transform: scale(1.4);
-	transition: 0.3s ease-in-out;
-	margin: 0;
+    background-color: #cccccc !important;
+	text-decoration: none !important;
 }
 
-.slidew:hover div
+.collapse-btn:focus
 {
-	top: 20px;
-	transition: 0.5s ease-in-out;
+	background-color: #cccccc !important;
+	text-decoration: none !important;
 }
 
-.slidew img
+.clear-p
 {
-	position: absolute;
-	transition: 0.5s ease-in-out;
-	height: 100%;
-	width: auto;
-}
-
-.slidew div
-{
-	padding-top: 40px;
-	padding-right: 4rem;
-	text-align: left;
-	position: absolute; 
-	bottom: 50px;
-	left: 30px;
-	top: 100%;
-	transition: 0.3s ease-in-out;
-}
-
-.slidew div a
-{
-	border: 1px solid white;
-	border-radius: 20px;
-	background-color: transparent;
-	color: white;
-	padding: 5px 30px;
-	text-decoration: none;
-	transition: 0.4s ease-in-out;
-	outline: none;
-}
-
-.slidew div a:hover
-{
-	transition: 0.3s ease-in-out;
-	border: 1px solid #D52C27;
-	background-color: #D52C27;
-	color: white;
+	margin-top: 15px;
 }
 
 .contain-side
@@ -151,10 +207,52 @@ button .slick-next .slick.arrow, button .slick-next .slick.arrow
   font-size: 27px;
 }
 
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion-faq {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
+  }
+  
+  .selected, .accordion-faq:hover {
+	background-color: #ccc;
+  }
+  
+  .accordion-faq:after {
+	content: '\002B';
+	color: #777;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+  }
+  
+  .selected:after {
+	content: "\2212";
+  }
+  
+  .panel {
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+  }
+
 @media screen and (max-width: 870px)
 {
 	.welcome-banner
 	{
 		padding: 20px 15px !important;
+	}
+
+	.welcome-text {
+		margin-top: -15% !important;
 	}
 }
