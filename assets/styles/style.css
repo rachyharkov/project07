@@ -35,6 +35,11 @@ body
 	background: #555; 
   }
 
+.tombolnya
+{
+	width: 100%;
+}
+
 .welcome-banner
 {
 	height: 100vh; 
